@@ -12,7 +12,7 @@ static int stricmp(const char* s1, const char* s2) {
   } while (c1 && (c1 == c2));
   return (c1 - c2);
 }
-
+#define offsetof(TYPE, MEMBER)	((size_t)&((TYPE *)0)->MEMBER)
 
 #define CONTAINER_OF(ptr, type, field_name) ((type *)(((uint8_t *)ptr) - offsetof(type, field_name)))
 
@@ -20,3 +20,8 @@ static int stricmp(const char* s1, const char* s2) {
  * \brief Retrieve array size
  */
 #define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
+
+#define  struct_set(_data, _field, _val) \
+    do { \
+        (_data)->_field = _val; \
+    } while (0) 
