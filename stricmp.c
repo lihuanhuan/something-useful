@@ -12,3 +12,11 @@ static int stricmp(const char* s1, const char* s2) {
   } while (c1 && (c1 == c2));
   return (c1 - c2);
 }
+
+
+#define CONTAINER_OF(ptr, type, field_name) ((type *)(((uint8_t *)ptr) - offsetof(type, field_name)))
+
+/**
+ * \brief Retrieve array size
+ */
+#define ARRAY_SIZE(a) (sizeof(a) / sizeof((a)[0]))
