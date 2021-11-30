@@ -1,0 +1,5 @@
+git submodule update --init --recursive
+git submodule update --remote --merge
+git submodule foreach git pull origin master
+git pull --recurse-submodules
+git pull --recurse-submodules -f
